@@ -1,29 +1,22 @@
-name: Ngrok_Windows_Github_RDP (Sounds On)
+name: LM - Repo
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
+    name: Start Building...
     runs-on: windows-latest
     timeout-minutes: 9999
     
     steps:
-      - name: Downloading Essentials
+      - name: Downloading & Installing Essentials
         run: |
-          Invoke-WebRequest -Uri https://gitlab.com/chamod12/ngrok-win10-rdp/-/raw/main/Downloads.bat -OutFile Downloads.bat
+          Invoke-WebRequest -Uri "https://gitlab.com/the28-sketch1/lm-repo/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
-      - name: Connecting Ngrok Account
-        run: ngrok config add-authtoken $Env:NGROK_AUTH
-        env:
-          NGROK_AUTH: ${{ secrets.NGROK_AUTH }}
-          
-      - name: Enabling RDP Access
-        run: cmd /c Acess.bat       
+      - name: Connect to LiteManager
+        run: cmd /c show.bat
 
-      - name: Log In To Remote Desktop Protocol
-        run: cmd /c startaudio.bat
-
-      - name: Time Count
+      - name: Time Counter
         run: cmd /c loop.bat
