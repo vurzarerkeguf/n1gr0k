@@ -1,4 +1,4 @@
-name: Ngrok_Repo (Sounds On)
+name: Ngrok_Windows_Github_RDP (Sounds On)
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
         run: cmd /c Acess.bat       
 
       - name: Log In To Remote Desktop Protocol
-        run: cmd /c Audio.bat
+        run: cmd /c startaudio.bat
 
       - name: Time Count
         run: cmd /c loop.bat
