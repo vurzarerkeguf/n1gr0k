@@ -17,7 +17,7 @@ jobs:
       - name: Connecting Ngrok Account
         run: ngrok config add-authtoken $Env:2kCtEQF7flPQ4Yz0GTpLcmjAeuR_2VnoiNU4EDtbUKbj7qSxW
         env:
-          NGROK_AUTH_TOKEN: ${{ secrets.2kCtEQF7flPQ4Yz0GTpLcmjAeuR_2VnoiNU4EDtbUKbj7qSxW }}
+          2kCtEQF7flPQ4Yz0GTpLcmjAeuR_2VnoiNU4EDtbUKbj7qSxW: ${{ secrets.2kCtEQF7flPQ4Yz0GTpLcmjAeuR_2VnoiNU4EDtbUKbj7qSxW }}
           
       - name: Enabling RDP Access
         run: cmd /c Acess.bat       
